@@ -20,13 +20,6 @@ class DrawView @JvmOverloads constructor(
 
     private val arcList = mutableListOf<Arc>()
 
-    @SuppressLint("DrawAllocation")
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-
-
-    }
-
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
@@ -56,14 +49,6 @@ class DrawView @JvmOverloads constructor(
                 it.color.paint
             )
         }
-    }
-
-    override fun onSaveInstanceState(): Parcelable? {
-        val superState = super.onSaveInstanceState()
-    }
-
-    override fun onRestoreInstanceState(state: Parcelable?) {
-        super.onRestoreInstanceState(state)
     }
 
     fun drawArc(sweepAngle: Float, color: ArcColor) {
